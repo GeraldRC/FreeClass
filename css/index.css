@@ -1,0 +1,90 @@
+html * {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+}
+
+.login {
+  width: 95%;
+  border-radius: 5px;
+  padding: 5px;
+  color: #eeeeee;
+  background-color: rgb(27, 27, 27);
+  -webkit-box-shadow: 2px 1px 41px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 1px 41px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 1px 41px -3px rgba(0, 0, 0, 0.75);
+  margin: auto;
+  justify-content: center;
+}
+
+@media (min-width: 400px) {
+  .login {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    width: 80%;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 600px) {
+  .login {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    width: 50%;
+    padding: 40px;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+a {
+  color: #eeeeee;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.footer {
+  color: whitesmoke;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-family: monospace;
+  font-size: 30px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
