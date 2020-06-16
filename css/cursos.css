@@ -49,5 +49,18 @@ html{
     text-align: center;
 }
 
+.contenido{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap: 10px;
+
+}
+.card{
+    padding: 5px;
+    text-align: center;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
 
 
