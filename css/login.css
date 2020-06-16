@@ -64,18 +64,21 @@ button:hover {
   background-color: #45a049;
 }
 
-#btn-login {
+.btn-login {
   border-radius: 5px;
 }
 
-#btn-log {
+.btn-log {
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
   color: white;
-  background-color: black;
+  background-color:green;
   float: right;
   margin: 15px;
+}
+.btn-log:hover{
+ background-color: rgb(50, 165, 50);  
 }
 nav {
   display: block;

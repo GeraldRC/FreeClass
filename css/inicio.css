@@ -1,104 +1,132 @@
-
-html{
-    margin: 0;
-    padding: 0;
+html {
+  margin: 0;
+  padding: 0;
 }
 
-.principal{
-    display: grid;
-    grid-template-columns: 250px 1fr 1fr ;
-    grid-template-rows: 60px 1fr  60px;
+.principal {
+  display: grid;
+  grid-template-columns: 250px 1fr 1fr;
+  grid-template-rows: 60px 1fr 60px;
 }
 
-.header{
-    grid-column: 1/-1;
+.header {
+  grid-column: 1/-1;
 }
 
-#active{
-    background: #6db370 ;
+#active {
+  background: #6db370;
 }
-.sidebar{
-    padding: 10px;
-    background-color:#52a054 ;
-    margin-top: 5px;
-
+.sidebar {
+  padding: 10px;
+  background-color: #52a054;
+  margin-top: 5px;
 }
-#logo{
-    margin: 10px;
+#logo {
+  margin: 10px;
 }
-.contenido{
-    grid-column: 2/-1;
-    padding: 10px;
+.contenido {
+  grid-column: 2/-1;
+  padding: 10px;
 }
-.footer{
-    grid-column: 1/-1;
-    text-align: center;
-}
-
-.fotoperfil{
-    width: 45px;
-    height: 45px;
-    border-radius:140px;
-    border:2px solid #666;
-    margin: 5px 5px;
+.footer {
+  grid-column: 1/-1;
+  text-align: center;
 }
 
-#textInicio{
-    display: inline-block;
-    float: none;
-    margin-left: 30px;
-    margin-top: 10px;
+.fotoperfil {
+  width: 45px;
+  height: 45px;
+  border-radius: 140px;
+  border: 2px solid #666;
+  margin: 5px 5px;
 }
 
-#cs{
-    background-color: rgba(0, 0, 0, 0);
-    background-position-x: 0%;
-    background-position-y: 0%;
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-image: linear-gradient(45deg, rgb(84, 48, 147) 32%, rgb(217, 96, 174) 100%);
-    background-size: auto;
-    background-origin: padding-box;
-    background-clip: border-box;
+#textInicio {
+  display: inline-block;
+  float: none;
+  margin-left: 30px;
+  margin-top: 10px;
 }
 
 #cs {
-    max-width: 550px;
-    border-radius: 4px;
-    overflow: hidden;
-    
-    transform: translateY(-50px);
-    transition: all .7s;
-  }
-  
-  #cs h2,
-  #cs p {
-    transform: translateY(-50px);
-    opacity: 0;
-    
-    transition-property: transform, opacity;
-    transition-duration: .4s;
-  }
-  
-  /* Final state */
-  .fancybox-slide--current #cs,
-  .fancybox-slide--current #cs h2,
-  .fancybox-slide--current #cs p {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  
-  /* Reveal content with different delays */
-  .fancybox-slide--current #cs h2 {
-    transition-delay: .1s;
-  }
-  
-  .fancybox-slide--current #cs p {
-    transition-delay: .3s;
-  }
-  svg {
-    overflow: hidden;
-        overflow-x: hidden;
-        overflow-y: hidden;
-    vertical-align: middle;
+  background: rgba(171, 255, 82, 1);
+  background: -moz-linear-gradient(
+    left,
+    rgba(171, 255, 82, 1) 0%,
+    rgba(109, 231, 64, 1) 45%,
+    rgba(109, 231, 64, 1) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    right top,
+    color-stop(0%, rgba(171, 255, 82, 1)),
+    color-stop(45%, rgba(109, 231, 64, 1)),
+    color-stop(100%, rgba(109, 231, 64, 1))
+  );
+  background: -webkit-linear-gradient(
+    left,
+    rgba(171, 255, 82, 1) 0%,
+    rgba(109, 231, 64, 1) 45%,
+    rgba(109, 231, 64, 1) 100%
+  );
+  background: -o-linear-gradient(
+    left,
+    rgba(171, 255, 82, 1) 0%,
+    rgba(109, 231, 64, 1) 45%,
+    rgba(109, 231, 64, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    left,
+    rgba(171, 255, 82, 1) 0%,
+    rgba(109, 231, 64, 1) 45%,
+    rgba(109, 231, 64, 1) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(171, 255, 82, 1) 0%,
+    rgba(109, 231, 64, 1) 45%,
+    rgba(109, 231, 64, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#abff52', endColorstr='#6de740', GradientType=1 );
+}
+
+#cs {
+  max-width: 550px;
+  border-radius: 4px;
+  overflow: hidden;
+
+  transform: translateY(-50px);
+  transition: all 0.7s;
+}
+
+#cs h2,
+#cs p {
+  transform: translateY(-50px);
+  opacity: 0;
+
+  transition-property: transform, opacity;
+  transition-duration: 0.4s;
+}
+
+/* Final state */
+.fancybox-slide--current #cs,
+.fancybox-slide--current #cs h2,
+.fancybox-slide--current #cs p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Reveal content with different delays */
+.fancybox-slide--current #cs h2 {
+  transition-delay: 0.1s;
+}
+
+.fancybox-slide--current #cs p {
+  transition-delay: 0.3s;
+}
+svg {
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  vertical-align: middle;
 }
