@@ -5,53 +5,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- FullCalendar -->
+    <link href='https://unpkg.com/@fullcalendar/core@4.4.2/main.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/daygrid@4.4.2/main.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
     <title>Document</title>
 </head>
 
 <body>
     <main class="principal">
         <div class="header">
-            <header>
+            <header class="bg-dark">
                 <nav>
                     <a href="login.html">
                         <img src="images/LogoFreeClass_Mesa de trabajo 1.jpg" width="40" height="40" id="logo">
                     </a>
+                    <h3 class="text-white" id="textInicio">
+                        Inicio
+                    </h3>
+                    <img src="images/perfil.jpg" class="fotoperfil" style="float: right;">
                 </nav>
             </header>
         </div>
 
         <div class="sidebar">
             <div class="sidecon">
-                <a class="btn-a" href="">Mi Perfil</a>
-                <a class="btn-a" href="cursos.html">Cursos</a>
-                <a class="btn-a" href="">Mi Espacio</a>
-                <a class="btn-a" href="">Contacto</a>
-                <a class="btn-a" href="">Chat</a>
-                <a class="btn-a" href="">Cursos</a>
-                <a class="btn-a" href="">Mi Perfil</a>
-                <a class="btn-s" href="">Cerrar Session</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Mi Perfil</a>
+                <a class=" btn btn-dark btn-block mt-3" href="cursos.html">Cursos</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Mi Espacio</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Chat</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Nosotros</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Contacto</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Mi Perfil</a>
+                <a class=" btn btn-danger btn-block mt-3" href="login.html" data-fancybox data-animation-duration="700"
+                    data-src="#cs" id="cerrarSession">Cerrar Session</a>
+                <div style="display: none;" id="cs" class="animated-modal">
+                    <h2 class="text-center text-white">Cerrando Session</h2>
+                    <p class="text-center text-white">Saliendo...</p>
+                    <svg width="150" height="150" viewBox="0 0 510 510" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path fill="#fff" d="M150.45,206.55l-35.7,35.7L229.5,357l255-255l-35.7-35.7L229.5,285.6L150.45,206.55z M459,255c0,112.2-91.8,204-204,204 S51,367.2,51,255S142.8,51,255,51c20.4,0,38.25,2.55,56.1,7.65l40.801-40.8C321.3,7.65,288.15,0,255,0C114.75,0,0,114.75,0,255 s114.75,255,255,255s255-114.75,255-255H459z"></path>
+                    </svg>
+                </div>
             </div>
         </div>
 
         <div class="contenido">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, aperiam eveniet. Expedita aspernatur
-                reiciendis, illum facere quas doloribus fugiat fuga iure ullam blanditiis? Vel hic architecto provident,
-                eaque, neque voluptatem laborum mollitia amet earum molestias eos. Incidunt vero dolorum reiciendis quia
-                magnam, doloribus ab, quod illo a magni cum quis iste, obcaecati ratione! Deserunt quas natus incidunt
-                sint corrupti quasi ullam, perspiciatis odio quam voluptas, voluptates, ducimus consequatur unde
-                asperiores. Quia distinctio quaerat libero quasi. Molestias, dignissimos minus id animi provident
-                asperiores dolorem quidem necessitatibus rerum assumenda enim tempora quia placeat, quisquam hic! Nisi
-                deleniti, a aspernatur quo expedita provident.
-            </p>
-
+            <div id="calendar" class="col-md-12">
+            </div>
         </div>
-        <div class="footer">
+        <div class="footer bg-dark text-white">
             <footer>
                 <p>Created By Involucionados</p>
             </footer>
         </div>
     </main>
+    <!-- FullCalendar -->
+    <script src='https://unpkg.com/@fullcalendar/core@4.4.2/main.min.js'></script>
+    <script src='https://unpkg.com/@fullcalendar/daygrid@4.4.2/main.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="js/inicio.js"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: ['dayGrid'],
+                timeZone: 'UTC',
+                defaultView: 'dayGridMonth',
+                events: [
+                    {
+                        id: 'a',
+                        title: 'my event',
+                        start: '2018-09-01'
+                    }
+                ]
+            });
+            calendar.render();
+        });
+
+    </script>
 </body>
 
 </html>

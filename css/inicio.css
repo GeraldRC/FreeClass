@@ -12,20 +12,6 @@ html{
 
 .header{
     grid-column: 1/-1;
-    background-color: rgb(58, 58, 58);
-}
-.btn-a,.btn-s{
-    display: block;
-    text-decoration: none;
-    color: white;
-    margin: 10px;
-    padding: 10px;
-}
-.btn-a:hover{
-    background: #6db370 ;
-}
-.btn-s:hover{
-    background: red;
 }
 
 #active{
@@ -49,5 +35,70 @@ html{
     text-align: center;
 }
 
+.fotoperfil{
+    width: 45px;
+    height: 45px;
+    border-radius:140px;
+    border:2px solid #666;
+    margin: 5px 5px;
+}
 
+#textInicio{
+    display: inline-block;
+    float: none;
+    margin-left: 30px;
+    margin-top: 10px;
+}
 
+#cs{
+    background-color: rgba(0, 0, 0, 0);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-image: linear-gradient(45deg, rgb(84, 48, 147) 32%, rgb(217, 96, 174) 100%);
+    background-size: auto;
+    background-origin: padding-box;
+    background-clip: border-box;
+}
+
+#cs {
+    max-width: 550px;
+    border-radius: 4px;
+    overflow: hidden;
+    
+    transform: translateY(-50px);
+    transition: all .7s;
+  }
+  
+  #cs h2,
+  #cs p {
+    transform: translateY(-50px);
+    opacity: 0;
+    
+    transition-property: transform, opacity;
+    transition-duration: .4s;
+  }
+  
+  /* Final state */
+  .fancybox-slide--current #cs,
+  .fancybox-slide--current #cs h2,
+  .fancybox-slide--current #cs p {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  /* Reveal content with different delays */
+  .fancybox-slide--current #cs h2 {
+    transition-delay: .1s;
+  }
+  
+  .fancybox-slide--current #cs p {
+    transition-delay: .3s;
+  }
+  svg {
+    overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    vertical-align: middle;
+}

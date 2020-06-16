@@ -4,42 +4,42 @@ html {
   width: 100%;
 }
 
-html{
+html {
   margin: 0;
   padding: 0;
 }
 
-.principal{
+.principal {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 60px 1fr 60px;
+  justify-content: center;
 }
 
 .fondo {
-  background: url("../images/fonfo.jpg") no-repeat center
-    center;
+  background: url("../images/fonfo.jpg") no-repeat center center;
   background-size: 100% 100%;
   height: 600px;
   grid-column: 1/-1;
   margin-top: 2px;
 }
 
-.header{
+.header {
   grid-column: 1/-1;
   background-color: rgb(58, 58, 58);
 }
 
-
-#logo{
+#logo {
   margin: 10px;
 }
 
-.footer{
+.footer {
   grid-column: 1/-1;
   text-align: center;
 }
 
-input[type=text],input[type=password]{
+input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -51,7 +51,7 @@ input[type=text],input[type=password]{
 
 button {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -64,6 +64,34 @@ button:hover {
   background-color: #45a049;
 }
 
-#btn-log{
+#btn-login {
   border-radius: 5px;
 }
+
+#btn-log {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: black;
+  float: right;
+  margin: 15px;
+}
+nav {
+  display: block;
+}
+
+#btn-registro {
+  border-radius: 5px;
+}
+
+#texto {
+  color: white;
+  width: 500px;
+  font-size: 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+

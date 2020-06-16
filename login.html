@@ -20,19 +20,54 @@
                     <a data-fancybox data-src="#btn-login" href="#" id="btn-log">
                         Login
                     </a>
+                    <a data-fancybox data-src="#btn-registro" href="#" id="btn-log">
+                        Registro
+                    </a>
                     <div style="display: none;" id="btn-login">
-                        <form action="inicio.html" method="POST">
+                        <table>
+                            <tr>
+                                <td><label for="txtusu">Usuario</label></td>
+                                <td><input type="text" id="txtusulog" placeholder="ingrese usuario"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="txtcon">Contraseña</label></td>
+                                <td><input type="password" id="txtconlog" placeholder="ingrese contraseña"></td>
+                            </tr>
+                            <tr>
+                                <td> <button id="btnlog">Ingresar</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="display: none;" id="btn-registro">
+                        <form name="formRegistro" action="inicio.html" method="POST">
                             <table>
                                 <tr>
+                                    <td><label for="txtrut">Rut</label></td>
+                                    <td><input type="text" placeholder="ingrese Rut" id="txtrutres"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="txtnom">Nombre</label></td>
+                                    <td><input type="text" placeholder="ingrese nombre" id="txtnomres"></td>
+                                </tr>
+                                <tr>
                                     <td><label for="txtusu">Usuario</label></td>
-                                    <td><input type="text" id="txtusu" placeholder="ingrese usuario"></td>
+                                    <td><input type="text" id="txtusures" placeholder="ingrese usuario"></td>
                                 </tr>
                                 <tr>
                                     <td><label for="txtcon">Contraseña</label></td>
-                                    <td><input type="password" id="txtcon" placeholder="ingrese contraseña"></td>
+                                    <td><input type="password" id="txtconres" placeholder="ingrese contraseña"></td>
                                 </tr>
                                 <tr>
-                                    <td> <button type="submit">Ingresar</button></td>
+                                    <td><label for="mi-archivo">
+                                            <span>Carga tu Pase Escolar*</span>
+                                        </label>
+                                    </td>
+                                    <td><span class="mi-archivo">
+                                            <input type="file" name="mi-archivo" id="mi-archivo">
+                                        </span></td>
+                                </tr>
+                                <tr>
+                                    <td> <button id="btn-res">Registrar</button></td>
                                 </tr>
                             </table>
                         </form>
@@ -41,10 +76,14 @@
             </header>
         </div>
         <div class="fondo">
+            <div id="texto">
+                <h1>Free Class
+                    Te esperamos
+                    Proximamente ...
+                </h1>
+            </div>
 
         </div>
-
-
         <div class="footer">
             <footer>
                 <p>Created By Involucionados</p>
@@ -53,6 +92,8 @@
     </main>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="js/login.js"></script>
+
 </body>
 
 </html>
