@@ -1,0 +1,16 @@
+
+
+#contenido{
+    display: flex;
+}
+
+#botones{
+    
+    text-align: center;
+    margin-left: auto;
+}
+
+.boton{
+    width: 100%;
+    min-height: 80px;
+}
