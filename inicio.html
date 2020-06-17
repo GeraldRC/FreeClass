@@ -9,6 +9,7 @@
     <!-- FullCalendar -->
     <link href='https://unpkg.com/@fullcalendar/core@4.4.2/main.min.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/daygrid@4.4.2/main.min.css">
+    <script src="https://unpkg.com/@fullcalendar/timegrid@4.4.2/main.min.css"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
     <title>Document</title>
@@ -36,16 +37,19 @@
                 <a class=" btn btn-dark btn-block mt-3" href="cursos.html">Asignaturas</a>
                 <a class=" btn btn-dark btn-block mt-3" href="">Mi Espacio</a>
                 <a class=" btn btn-dark btn-block mt-3" href="">Chat</a>
-                <a class=" btn btn-dark btn-block mt-3" href="">Nosotros</a>
+                <a class=" btn btn-dark btn-block mt-3" href="somos.html">Nosotros</a>
                 <a class=" btn btn-dark btn-block mt-3" href="">Contacto</a>
-                <a class=" btn btn-dark btn-block mt-3" href="">Mi Perfil</a>
+                <a class=" btn btn-dark btn-block mt-3" href="perfil.html">Mi Perfil</a>
                 <a class=" btn btn-danger btn-block mt-3" href="login.html" data-fancybox data-animation-duration="700"
                     data-src="#cs" id="cerrarSession">Cerrar Session</a>
                 <div style="display: none;" id="cs" class="animated-modal">
                     <h2 class="text-center text-white">Cerrando Session</h2>
                     <p class="text-center text-white">Saliendo...</p>
-                    <svg width="150" height="150" viewBox="0 0 510 510" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <path fill="#fff" d="M150.45,206.55l-35.7,35.7L229.5,357l255-255l-35.7-35.7L229.5,285.6L150.45,206.55z M459,255c0,112.2-91.8,204-204,204 S51,367.2,51,255S142.8,51,255,51c20.4,0,38.25,2.55,56.1,7.65l40.801-40.8C321.3,7.65,288.15,0,255,0C114.75,0,0,114.75,0,255 s114.75,255,255,255s255-114.75,255-255H459z"></path>
+                    <svg width="150" height="150" viewBox="0 0 510 510" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path fill="#fff"
+                            d="M150.45,206.55l-35.7,35.7L229.5,357l255-255l-35.7-35.7L229.5,285.6L150.45,206.55z M459,255c0,112.2-91.8,204-204,204 S51,367.2,51,255S142.8,51,255,51c20.4,0,38.25,2.55,56.1,7.65l40.801-40.8C321.3,7.65,288.15,0,255,0C114.75,0,0,114.75,0,255 s114.75,255,255,255s255-114.75,255-255H459z">
+                        </path>
                     </svg>
                 </div>
             </div>
@@ -62,29 +66,68 @@
         </div>
     </main>
     <!-- FullCalendar -->
-    <script src='https://unpkg.com/@fullcalendar/core@4.4.2/main.min.js'></script>
-    <script src='https://unpkg.com/@fullcalendar/daygrid@4.4.2/main.min.js'></script>
+    <script src="https://unpkg.com/@fullcalendar/core@4.4.2/main.min.js"></script>
+    <script src="https://unpkg.com/@fullcalendar/core@4.4.2/locales-all.js"></script>
+    <script src="https://unpkg.com/@fullcalendar/interaction@4.4.2/main.min.js"></script>
+    <script src="https://unpkg.com/@fullcalendar/daygrid@4.4.2/main.min.js"></script>
+    <script src="https://unpkg.com/@fullcalendar/timegrid@4.4.2/main.min.js"></script>
+    <script src="https://unpkg.com/@fullcalendar/list@4.4.2/main.min.js"></script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+    <script src="js/moment.js"></script>
     <script src="js/inicio.js"></script>
     <script>
+        var date = new Date();
+        var yyyy = date.getFullYear().toString();
+        var mm = (date.getMonth() + 1).toString().length == 1 ? "0" + (date.getMonth() + 1).toString() : (date.getMonth() + 1).toString();
+        var dd = (date.getDate()).toString().length == 1 ? "0" + (date.getDate()).toString() : (date.getDate()).toString();
+
+
 
         document.addEventListener('DOMContentLoaded', function () {
+            var initialLocaleCode = 'en';
+            var localeSelectorEl = document.getElementById('locale-selector');
             var calendarEl = document.getElementById('calendar');
 
             var calendar = new FullCalendar.Calendar(calendarEl, {
-                plugins: ['dayGrid'],
-                timeZone: 'UTC',
-                defaultView: 'dayGridMonth',
-                events: [
-                    {
-                        id: 'a',
-                        title: 'my event',
-                        start: '2018-09-01'
-                    }
-                ]
+                plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridMonth,timeGridDay,listMonth'
+                },
+                locale: initialLocaleCode,
+                buttonIcons: false, // show the prev/next text
+                weekNumbers: true,
+                navLinks: true, // can click day/week names to navigate views
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                events: 'https://fullcalendar.io/demo-events.json?overload-day'
             });
+
             calendar.render();
+
+            // build the locale selector's options
+            calendar.getAvailableLocaleCodes().forEach(function (localeCode) {
+                var optionEl = document.createElement('option');
+                optionEl.value = localeCode;
+                optionEl.selected = localeCode == initialLocaleCode;
+                optionEl.innerText = localeCode;
+                localeSelectorEl.appendChild(optionEl);
+            });
+
+            // when the selected option changes, dynamically change the calendar option
+            localeSelectorEl.addEventListener('change', function () {
+                if (this.value) {
+                    calendar.setOption('locale', this.value);
+                }
+            });
+
         });
 
     </script>
