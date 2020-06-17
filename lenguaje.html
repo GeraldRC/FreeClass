@@ -7,7 +7,47 @@
     <link rel="stylesheet" href="css/cursos.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <title>Document</title>
+
+    <style>
+
+        .slider {
+            width: auto;
+            margin: 30px 50px 50px;
+        }
+        
+        .slick-slide {
+            background: yellow;
+            color: black;
+            padding: 40px 0;
+            font-size: 30px;
+            font-family: "Arial", "Helvetica";
+            text-align: center;
+        }
+        
+        .slick-prev:before, 
+        .slick-next:before {
+            color: white;    
+        }
+        
+        .slick-dots {
+            bottom: -30px;
+        
+        }
+        
+        
+        .slick-slide:nth-child(odd) {
+             background: blueviolet;
+             color: white;
+        }
+        
+        
+            </style>
+        
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        
+            <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
 <body>
@@ -50,6 +90,46 @@
         </div>
 
         <div id="contenido">
+            <h1>Asignatura: Lenguaje y Comunicación</h1><br>
+            <h3>En el caso de la asignatura de Lenguaje y Comunicación, las Bases Curriculares han sido agrupadas en tres ejes lectura, escritura y comunicación oral.</h3><br>
+            <h4>
+                Escuchar y hablar, leer y escribir son las actividades que conforman la competencia comunicativa de una persona y se ponen en práctica permanentemente en la vida cotidiana. En las Bases Curriculares y en los Programas de Estudio, estas dimensiones del lenguaje han sido <strong> agrupadas en tres ejes -lectura, escritura y comunicación oral- </strong>que permiten describir los conocimientos, las habilidades y las actitudes involucradas en el logro de la competencia comunicativa. Esta división es artificial y responde solo a la necesidad de presentar una realidad compleja de manera organizada, para destacar los aspectos principales que debe desarrollar el alumno en los primeros seis años de la enseñanza básica y para abordar los contenidos propios de la asignatura, aplicándolos a situaciones reales. No obstante la organización en ejes, se espera que los objetivos se aborden de manera integrada para desarrollar efectivamente las competencias comunicativas.
+            </h4>
+    
+           <section class="slider">
+    
+                <div>Dimensiones del Lenguaje:</div>
+                <div>Escribir</div>
+                <div>Leer</div>
+                <div>Comunicación oral</div>
+    
+                
+            </section>
+           
+            
+        </main>
+    
+        <script>
+            $(".slider").slick({
+               
+                autoplay: true,
+                autoplaySpeed: 1500,
+                arrows: true,
+                dots: false,
+               
+                responsive: [{ 
+                    breakpoint: 500,
+                    settings: {
+                        dots: false,
+                        arrows: false,
+                        infinite: false,
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    } 
+                }]
+            });
+    
+</script>
 
         </div>
         <div class="footer bg-dark text-white">
