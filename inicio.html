@@ -90,7 +90,7 @@
 
 
         document.addEventListener('DOMContentLoaded', function () {
-            var initialLocaleCode = 'en';
+            var initialLocaleCode = 'es';
             var localeSelectorEl = document.getElementById('locale-selector');
             var calendarEl = document.getElementById('calendar');
 
@@ -107,7 +107,6 @@
                 navLinks: true, // can click day/week names to navigate views
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
-                events: 'https://fullcalendar.io/demo-events.json?overload-day'
             });
 
             calendar.render();
