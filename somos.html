@@ -4,23 +4,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/inicio.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    
     <title>Document</title>
+
+    <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+	<script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+	<style>
+	canvas {
+		-moz-user-select:none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+
+     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
+	<link rel="stylesheet" type="text/css" href="/media/css/site-examples.css?_=6239e0117a45e8466919cf6525f8d1f2">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+     <style type="text/css" class="init">
+
+     body{
+         font-family: Verdana;
+         font-size: 10px;
+     }
+     h3{
+         font-size: initial;
+         text-align: justify;
+     }
+
+     </style>
+
+     <script type="text/javascript" src="/media/js/site.js?_=0cf4f1e4a0c0a55b75c16ecd0b850ed5"></script>
+	<script type="text/javascript" src="/media/js/dynamic.php?comments-page=examples%2Fbasic_init%2Fzero_configuration.html" async></script>
+	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="../resources/demo.js"></script>
+    
+</script>
+
+<script type="text/javascript" class="init">
+	
+//script tabla
+    $(document).ready(function() {
+        $('#tabla').DataTable();
+    } );
+    </script>
 </head>
 
 <body>
     <main class="principal">
-        <header>
-            <nav class="navbar navbar-light bg-dark">
-                <a class="navbar-brand text-white" href="#">
-                    <img src="images/LogoFreeClass_Mesa de trabajo 1.jpg" width="30" height="30"
-                        class="d-inline-block align-top" alt="" loading="lazy">
-                    FreeClass
-                </a>
-            </nav>
-        </header>
+        <div class="header">
+            <header class="bg-dark">
+                <nav>
+                    <a href="login.html">
+                        <img src="images/LogoFreeClass_Mesa de trabajo 1.jpg" width="40" height="40" id="logo">
+                    </a>
+                    <h3 class="text-white" id="textInicio">
+                        Somos
+                    </h3>
+                    <img src="images/perfil.jpg" class="fotoperfil" style="float: right;">
+                </nav>
+            </header>
+        </div>
 
+        <div class="sidebar">
+            <div class="sidecon">
+                <a class=" btn btn-dark btn-block mt-3" href="">Mi Perfil</a>
+                <a class=" btn btn-dark btn-block mt-3" href="cursos.html">Cursos</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Mi Espacio</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Chat</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Nosotros</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Contacto</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Mi Perfil</a>
+                <a class=" btn btn-danger btn-block mt-3" href="login.html" data-fancybox data-animation-duration="700"
+                    data-src="#cs" id="cerrarSession">Cerrar Session</a>
+                <div style="display: none;" id="cs" class="animated-modal">
+                    <h2 class="text-center text-white">Cerrando Session</h2>
+                    <p class="text-center text-white">Saliendo...</p>
+                    <svg width="150" height="150" viewBox="0 0 510 510" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path fill="#fff" d="M150.45,206.55l-35.7,35.7L229.5,357l255-255l-35.7-35.7L229.5,285.6L150.45,206.55z M459,255c0,112.2-91.8,204-204,204 S51,367.2,51,255S142.8,51,255,51c20.4,0,38.25,2.55,56.1,7.65l40.801-40.8C321.3,7.65,288.15,0,255,0C114.75,0,0,114.75,0,255 s114.75,255,255,255s255-114.75,255-255H459z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="contenido">
+            <h3>Involucionados es un grupo de desarrollo formado al alero de las actividades grupales del Bootcamp Full Stack Java, que toma su nombre de la creencia de que la sensación de involución genera en los alumnos la autocrítica necesaria para descubrir como mejorar su desempeño y seguir adelante con el proceso de evolución.</h3>
+
+           <div id="canvas-holder" style="width:40%">
+		   <canvas id="chart-area">Involucionados</canvas>
+	       </div>
+	    <button id="randomizeData">Actualizar</button>
+        <button id="changeCircleSize">Cambio Presentación</button>
+        <br><br>
+
+          <h3>Involucionados está formado por:</h3>
+
+          <div>
+          <table id="tabla" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Rol</th>
+                    <th>Pasatiempo</th>
+                    <th>Comida Favorita</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="images/perfil.jpg" alt="" width="30px" height="30px"></td>
+                    <td>Gerald</td>
+                    <td>Reyes</td>
+                    <td>28</td>
+                    <td>Product Owner</td>
+                    <td>Videojuegos</td>
+                    <td>Churrasco italiano</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Cristobal</td>
+                    <td>Cifuentes</td>
+                    <td>29</td>
+                    <td>Senior Developer</td>
+                    <td>Futbolito</td>
+                    <td>Costillar con pure</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Marcelo</td>
+                    <td>Gonzalez</td>
+                    <td>42</td>
+                    <td>Junior Developer</td>
+                    <td>Cine</td>
+                    <td>Pizza</td>
+                </tr>
+                <tr>
+                    <td><img src="images/edgardo.jpg" alt="" width="30px" height="30px"></td>
+                    <td>Edgardo</td>
+                    <td>Mora</td>
+                    <td>48</td>
+                    <td>Junior Developer</td>
+                    <td>Música</td>
+                    <td>Lasagna</td>
+                </tr>
+            </div> 
+        </div>
+        
+        <!--Div where the WhatsApp will be rendered-->  
+        <div id="WAButton"></div>  
+       
     </main>
+    
+    <script>
+//script gráfico de dona
+      var randomScalingFactor = function() {
+      return Math.round(Math.random() * 100);
+  };
+
+  var config = {
+      type: 'doughnut',
+      data: {
+          datasets: [{
+              data: [
+                  randomScalingFactor(),
+                  randomScalingFactor(),
+                  randomScalingFactor(),
+                  randomScalingFactor(),
+                  randomScalingFactor(),
+              ],
+              backgroundColor: [
+                  window.chartColors.red,
+                  window.chartColors.orange,
+                  window.chartColors.yellow,
+                  window.chartColors.green,
+                  window.chartColors.blue,
+              ],
+              label: 'Dataset 1'
+          }],
+          labels: [
+              'Java',
+              'SQL',
+              'Html',
+              'Javascript',
+              'Css'
+          ]
+      },
+      options: {
+          responsive: true,
+          legend: {
+              position: 'top',
+          },
+          title: {
+              display: true,
+              text: 'Lenguajes mas usados en nuestros proyectos:'
+          },
+          animation: {
+              animateScale: true,
+              animateRotate: true
+          }
+      }
+  };
+
+  window.onload = function() {
+      var ctx = document.getElementById('chart-area').getContext('2d');
+      window.myDoughnut = new Chart(ctx, config);
+  };
+
+  document.getElementById('randomizeData').addEventListener('click', function() {
+      config.data.datasets.forEach(function(dataset) {
+          dataset.data = dataset.data.map(function() {
+              return randomScalingFactor();
+          });
+      });
+
+      window.myDoughnut.update();
+  });
+
+  document.getElementById('changeCircleSize').addEventListener('click', function() {
+      if (window.myDoughnut.options.circumference === Math.PI) {
+          window.myDoughnut.options.circumference = 2 * Math.PI;
+          window.myDoughnut.options.rotation = -Math.PI / 2;
+      } else {
+          window.myDoughnut.options.circumference = Math.PI;
+          window.myDoughnut.options.rotation = -Math.PI;
+      }
+
+      window.myDoughnut.update();
+  });
+
+</script>
+        
 </body>
 
 </html>
