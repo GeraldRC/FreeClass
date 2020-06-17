@@ -11,26 +11,17 @@
 
     <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
     <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <style>
         canvas {
             -moz-user-select: none;
             -webkit-user-select: none;
             -ms-user-select: none;
         }
-    </style>
 
-    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
-    <link rel="stylesheet" type="text/css" href="/media/css/site-examples.css?_=6239e0117a45e8466919cf6525f8d1f2">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-
-    <style type="text/css" class="init">
         body {
             font-family: Verdana;
             font-size: 10px;
@@ -42,23 +33,7 @@
         }
     </style>
 
-    <script type="text/javascript" src="/media/js/site.js?_=0cf4f1e4a0c0a55b75c16ecd0b850ed5"></script>
-    <script type="text/javascript"
-        src="/media/js/dynamic.php?comments-page=examples%2Fbasic_init%2Fzero_configuration.html" async></script>
-    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script type="text/javascript" language="javascript"
-        src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" language="javascript" src="../resources/demo.js"></script>
 
-    </script>
-
-    <script type="text/javascript" class="init">
-
-        //script tabla
-        $(document).ready(function () {
-            $('#tabla').DataTable();
-        });
-    </script>
 </head>
 
 <body>
@@ -117,7 +92,7 @@
             <h3>Involucionados está formado por:</h3>
 
             <div>
-                <table id="tabla" class="display" style="width:100%">
+                <table id="tabla" class="display table-bordered" style="width:100%">.
                     <thead>
                         <tr>
                             <th>Foto</th>
@@ -132,7 +107,7 @@
                     <tbody>
                         <tr>
                             <td><img src="images/perfil.jpg" alt="" width="30px" height="30px"></td>
-                            <td>Gerald</td>
+                            <td>Gerald</td> 
                             <td>Reyes</td>
                             <td>28</td>
                             <td>Product Owner</td>
@@ -168,91 +143,8 @@
                         </tr>
             </div>
         </div>
-
-        <!--Div where the WhatsApp will be rendered-->
-        <div id="WAButton"></div>
-
     </main>
-
-    <script>
-        //script gráfico de dona
-        var randomScalingFactor = function () {
-            return Math.round(Math.random() * 100);
-        };
-
-        var config = {
-            type: 'doughnut',
-            data: {
-                datasets: [{
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                    ],
-                    backgroundColor: [
-                        window.chartColors.red,
-                        window.chartColors.orange,
-                        window.chartColors.yellow,
-                        window.chartColors.green,
-                        window.chartColors.blue,
-                    ],
-                    label: 'Dataset 1'
-                }],
-                labels: [
-                    'Java',
-                    'SQL',
-                    'Html',
-                    'Javascript',
-                    'Css'
-                ]
-            },
-            options: {
-                responsive: true,
-                legend: {
-                    position: 'top',
-                },
-                title: {
-                    display: true,
-                    text: 'Lenguajes mas usados en nuestros proyectos:'
-                },
-                animation: {
-                    animateScale: true,
-                    animateRotate: true
-                }
-            }
-        };
-
-        window.onload = function () {
-            var ctx = document.getElementById('chart-area').getContext('2d');
-            window.myDoughnut = new Chart(ctx, config);
-        };
-
-        document.getElementById('randomizeData').addEventListener('click', function () {
-            config.data.datasets.forEach(function (dataset) {
-                dataset.data = dataset.data.map(function () {
-                    return randomScalingFactor();
-                });
-            });
-
-            window.myDoughnut.update();
-        });
-
-        document.getElementById('changeCircleSize').addEventListener('click', function () {
-            if (window.myDoughnut.options.circumference === Math.PI) {
-                window.myDoughnut.options.circumference = 2 * Math.PI;
-                window.myDoughnut.options.rotation = -Math.PI / 2;
-            } else {
-                window.myDoughnut.options.circumference = Math.PI;
-                window.myDoughnut.options.rotation = -Math.PI;
-            }
-
-            window.myDoughnut.update();
-        });
-
-    </script>
-
+    <script src="js/somos.js"></script>
 </body>
 
 </html>
