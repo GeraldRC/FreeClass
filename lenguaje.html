@@ -4,106 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cursos.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <title>Document</title>
-
-    <style>
-
-.slider {
-    width: auto;
-    margin: 30px 50px 50px;
-}
-
-.slick-slide {
-    background: yellow;
-    color: black;
-    padding: 40px 0;
-    font-size: 30px;
-    font-family: "Arial", "Helvetica";
-    text-align: center;
-}
-
-.slick-prev:before, 
-.slick-next:before {
-    color: white;    
-}
-
-.slick-dots {
-    bottom: -30px;
-
-}
-
-
-.slick-slide:nth-child(odd) {
-     background: blueviolet;
-     color: white;
-}
-
-
-    </style>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
 <body>
     <main class="principal">
-        <header>
-            <nav class="navbar navbar-light bg-dark">
-                <a class="navbar-brand text-white" href="#">
-                    <img src="images/LogoFreeClass_Mesa de trabajo 1.jpg" width="30" height="30"
-                        class="d-inline-block align-top" alt="" loading="lazy">
-                    FreeClass
-                </a>
-            </nav>
-        </header>
+        <div class="header">
+            <header class="bg-dark">
+                <nav>
+                    <a href="login.html">
+                        <img src="images/LogoFreeClass_Mesa de trabajo 1.jpg" width="40" height="40" id="logo">
+                    </a>
+                    <h3 class="text-white" id="textInicio">
+                        Lenguaje
+                    </h3>
+                    <img src="images/perfil.jpg" class="fotoperfil" style="float: right;">
+                </nav>
+            </header>
+        </div>
 
-        <h1>Asignatura: Lenguaje y Comunicación</h1><br>
-        <h3>En el caso de la asignatura de Lenguaje y Comunicación, las Bases Curriculares han sido agrupadas en tres ejes lectura, escritura y comunicación oral.</h3><br>
-        <h4>
-            Escuchar y hablar, leer y escribir son las actividades que conforman la competencia comunicativa de una persona y se ponen en práctica permanentemente en la vida cotidiana. En las Bases Curriculares y en los Programas de Estudio, estas dimensiones del lenguaje han sido <strong> agrupadas en tres ejes -lectura, escritura y comunicación oral- </strong>que permiten describir los conocimientos, las habilidades y las actitudes involucradas en el logro de la competencia comunicativa. Esta división es artificial y responde solo a la necesidad de presentar una realidad compleja de manera organizada, para destacar los aspectos principales que debe desarrollar el alumno en los primeros seis años de la enseñanza básica y para abordar los contenidos propios de la asignatura, aplicándolos a situaciones reales. No obstante la organización en ejes, se espera que los objetivos se aborden de manera integrada para desarrollar efectivamente las competencias comunicativas.
-        </h4>
+        <div class="sidebar">
+            <div class="sidecon">
+                <a class=" btn btn-dark btn-block mt-3" href="inicio.html">Inicio</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Mi Perfil</a>
+                <a class=" btn btn-dark btn-block mt-3" href="cursos.html">Cursos</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Mi Espacio</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Chat</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Nosotros</a>
+                <a class=" btn btn-dark btn-block mt-3" href="">Contacto</a>
+                <a class=" btn btn-danger btn-block mt-3" href="login.html" data-fancybox data-animation-duration="700"
+                    data-src="#cs" id="cerrarSession">Cerrar Session</a>
+                <div style="display: none;" id="cs" class="animated-modal">
+                    <h2 class="text-center text-white">Cerrando Session</h2>
+                    <p class="text-center text-white">Saliendo...</p>
+                    <svg width="150" height="150" viewBox="0 0 510 510" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path fill="#fff" d="M150.45,206.55l-35.7,35.7L229.5,357l255-255l-35.7-35.7L229.5,285.6L150.45,206.55z M459,255c0,112.2-91.8,204-204,204 S51,367.2,51,255S142.8,51,255,51c20.4,0,38.25,2.55,56.1,7.65l40.801-40.8C321.3,7.65,288.15,0,255,0C114.75,0,0,114.75,0,255 s114.75,255,255,255s255-114.75,255-255H459z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
 
-       <section class="slider">
+        <div id="contenido">
 
-            <div>Dimensiones del Lenguaje:</div>
-            <div>Escribir</div>
-            <div>Leer</div>
-            <div>Comunicación oral</div>
-
-            
-        </section>
-       
-        
+        </div>
+        <div class="footer bg-dark text-white">
+            <footer>
+                <p>Created By Involucionados</p>
+            </footer>
+        </div>
     </main>
 
-    <script>
-        $(".slider").slick({
-           
-            autoplay: true,
-            autoplaySpeed: 1500,
-            arrows: true,
-            dots: false,
-           
-            responsive: [{ 
-                breakpoint: 500,
-                settings: {
-                    dots: false,
-                    arrows: false,
-                    infinite: false,
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                } 
-            }]
-        });
-
-     
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="js/lenguaje.js"></script>
 </body>
 
 </html>
